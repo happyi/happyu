@@ -1,0 +1,30 @@
+title: 一些面试问题
+id: 46
+categories:
+  - 后端
+tags:
+  - spring
+  - 面试
+date: 2017-03-07 12:00:03
+---
+1,spring 依赖注入如何解决循环引用的问题?
+	通过构造器 产生的循环依赖 无法解决 产生异常BeanCurrentlyInCreationException
+   通过setter 产生的循环依赖可以通过单例方式来解决
+
+2，项目如何确保安全性</div>
+    spring  User 表实现  UserDetails  接口    Role 表实现 GrantedAuthority
+<div>                userService 实现 UserDetailsService 接口
+3，hashMap 实现原理
+    哈希表是由**数组+链表**组成的，底层维护的是一个个Entry 对象，null 值放在第一个
+
+
+// 存储时:
+{% codeblock %}
+int hash = key.hashCode();
+int index = hash % Entry[].length;
+Entry[index] = value;
+// 取值时:
+int hash = key.hashCode();
+int index = hash % Entry[].length;
+return Entry[index];
+{% endcodeblock %}
